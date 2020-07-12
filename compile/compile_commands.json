@@ -1,0 +1,8 @@
+[
+  {
+    "directory": "/home/cole/qnes/compile",
+    "command": "c++ -Iqnes@exe -I. -I.. -fdiagnostics-color=always -pipe -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -Wnon-virtual-dtor -g -MD -MQ 'qnes@exe/src_qnes.cc.o' -MF 'qnes@exe/src_qnes.cc.o.d' -o 'qnes@exe/src_qnes.cc.o' -c ../src/qnes.cc",
+    "file": "../src/qnes.cc",
+    "output": "qnes@exe/src_qnes.cc.o"
+  }
+]
