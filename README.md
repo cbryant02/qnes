@@ -6,9 +6,8 @@ qnes is an experimental NES emulator written in C++.
 
 ## Build
 
-Compile qnes with Meson:
+Build with Meson:
 
-1. Install [Meson.](https://mesonbuild.com/Quick-guide.html)
-2. Run `meson builddir` to generate the build config.
-3. `cd builddir`
-4. Run `ninja`.
+```bash
+$ meson build && cd build && ninja
+```
