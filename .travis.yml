@@ -1,0 +1,18 @@
+dist: focal
+group: travis_latest
+
+os: linux
+language: cpp
+
+matrix:
+  include:
+    - env: CC=gcc
+    - env: CC=clang
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install meson ninja-build doxygen
+
+script:
+  - meson build
+  - meson test -C build
