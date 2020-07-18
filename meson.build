@@ -18,18 +18,18 @@ subdir('include')
 subdir('src')
 subdir('docs')
 
-# Dependencies and libs
-qnes_bin_deps = []
-qnes_bin_dep_libs = []
+# Dependencies
+project_dependencies = []
+project_link_targets = []
 
-qnes_bin = executable('qnes',
-    main_source,
+qnes_bin = executable(meson.project_name(),
+    project_sources,
     include_directories: inc,
-    dependencies: qnes_bin_deps,
-    link_with: qnes_bin_dep_libs)
+    dependencies: project_dependencies,
+    link_with: project_link_targets)
 
 # clang-format support
-clang_format = find_program('clang-format')
+clang_format = find_program('clang-format', required: false)
 
 if clang_format.found()
     configure_file(input: '.clang-format',
@@ -40,7 +40,7 @@ if clang_format.found()
 endif
 
 # clang-tidy support
-clang_tidy = find_program('run-clang-tidy')
+clang_tidy = find_program('run-clang-tidy', required: false)
 
 if clang_tidy.found()
     configure_file(input: '.clang-tidy',

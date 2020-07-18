@@ -1,2 +1,2 @@
-main_source = files('qnes.cc')
-project_sources += main_source
+project_sources += files('qnes.cc')
+subdir('components')

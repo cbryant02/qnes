@@ -1,13 +1,9 @@
 <p align="center">
-    <object data="qnes_logo.svg" type="image/svg+xml" height="96">
-        <img height="96" src="qnes_logo.svg"/>
-    </object>
+    <img height="96" src="qnes_logo.svg"/>
 </p>
 
 <p align="center">
-    <object data="qnes.svg" type="image/svg+xml" height="72">
-        <img height="72" src="qnes.svg"/>
-    </object>
+    <img height="72" src="qnes.svg"/>
 </p>
 
 ## Overview
