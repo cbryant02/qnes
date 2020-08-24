@@ -1,3 +1,6 @@
 project_sources += files(
-    'cpu.cc'
+    'cpu.cc',
+    'tables.cc',
+    'instructions.cc',
+    'addressing_modes.cc'
 )

@@ -1,54 +1,47 @@
 #include "components/cpu.hh"
 #include "components/ram.hh"
 
+#include <vector>
+
 using qnes::cpu;
 
-/**
- * @brief Construct a new cpu object
- * @param ram Pointer to a ram instance
- */
-cpu::cpu(qnes::ram* ram) {
-    this->ram = ram;
+cpu::cpu(qnes::ram* memory) {
+    this->ram = memory;
     a = 0x00;
     x = 0x00;
     y = 0x00;
     
     sp = 0xFD;
     status = 0x34;
+    populate_tables();
 }
 
-/**
- * @brief Destroy the cpu object
- */
 cpu::~cpu() {
 }
 
-/**
- * @brief Perform a clock cycle.
- */
 void cpu::cycle() {
 }
 
-/**
- * @brief Reset the CPU.
- * The CPU will reset to a known state and
- * begin executing instructions again after
- * 6 clock cycles.
- */
 void cpu::reset() {
-
+    a = 0x00;
+    x = 0x00;
+    y = 0x00;
+    sp = 0xFD;
+    status = 0x34;
 }
 
-/**
- * @brief Request an interrupt.
- */
 void cpu::irq() {
 
 }
 
-/**
- * @brief Force an interrupt.
- */
 void cpu::nmi() {
 
+}
+
+void cpu::write(uint16_t addr, uint8_t data) {
+    ram->write(addr, data);
+}
+
+uint8_t cpu::read(uint16_t addr) {
+    return ram->read(addr);
 }
